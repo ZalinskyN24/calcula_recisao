@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Rescisão</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cálculo de Rescisão Trabalhista</h1>
+        <form id="calculo-rescisao">
+            <label>Data de Entrada:</label>
+            <input type="date" id="dataEntrada" required>
+            
+            <label>Data de Saída:</label>
+            <input type="date" id="dataSaida" required>
+            
+            <label>Número de Filhos:</label>
+            <input type="number" id="numeroFilhos" min="0" required>
+            
+            <label>Salário:</label>
+            <input type="number" id="salario" min="0" required>
+            
+            <label>Dispensa:</label>
+            <select id="tipoDispensa" required>
+                <option value="semJustaCausa">Sem Justa Causa</option>
+                <option value="comJustaCausa">Com Justa Causa</option>
+                <option value="pedidoDemissao">Pedido de Demissão</option>
+            </select>
+
+            <label>Tirou Férias?</label>
+            <select id="feriasTiradas" required>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+
+            <label>Vale Transporte (Valor Mensal):</label>
+            <input type="number" id="valeTransporte" min="0">
+
+            <label>Recebeu Vale Alimentação/Refeição?</label>
+            <input type="number" id="valeAlimentacao" min="0">
+
+            <button type="button" onclick="calcularRescisao()">Calcular Rescisão</button>
+        </form>
+        
+        <div id="resultado" class="resultado"></div>
+        
+        <div class="compartilhamento">
+            <button onclick="compartilhar()">Compartilhar Resultado</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
